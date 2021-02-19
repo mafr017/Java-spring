@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Mahasiswa</title>
+</head>
+<body>
+<div layout:fragment="ctn">
+    <center>
+        <h2 class="text-warning">DAFTAR MAHASISWA</h2>
+        <br>
+        <form action="#" th:action="@{/listmhs}">
+            <p>Nama: <input type="text" name="cari"></p>
+            <p><input type="submit" value="Submit"></p>
+        </form>
+        <br>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">NIM</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="lmhs,itStat: ${cek}">
+                <td th:text="${itStat.index} + 1"></td>
+                <td th:text="${lmhs.namaId}"></td>
+                <td th:text="${lmhs.nimId}"></td>
+                <td><a th:href="@{|updatemhs/${lmhs.namaId}|}">edit</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </center>
+</div>
+</body>
+</html>

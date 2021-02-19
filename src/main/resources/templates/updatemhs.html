@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>update mahasiswa</title>
+</head>
+<body>
+<div layout:fragment="ctn">
+    <center>
+        <form class="form-horizontal" th:action="@{listmhsupdate}" th:object="${mmhs}" method="post">
+            <fieldset>
+                <legend>UPDATE Mahasiswa</legend>
+                <div class="form-group">
+                    <label for="namaId" class="col-lg-2 control-label">Nama</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="namaId" placeholder="Nama" th:field="*{namaId}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nimId" class="col-lg-2 control-label">NIM</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="nimId" placeholder="NIM" th:field="*{nimId}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </center>
+</div>
+</body>
+</html>

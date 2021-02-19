@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Beranda</title>
+</head>
+<body>
+<div layout:fragment="ctn">
+    <center>
+        <h2 class="text-primary">Tes Spring boot <span th:text="${iden}"/></h2>
+        <h4><span th:text="${cek}"/></h4>
+        <!--    <h4><span th:text="${cek.c1}"/> | <span th:text="${cek.c2}"/> | <span th:text="${cek.c3}"/></h4>-->
+    </center>
+</div>
+</body>
+</html>
